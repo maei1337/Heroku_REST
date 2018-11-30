@@ -16,10 +16,6 @@ app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'matthias' # Das sollte nich öffentlich einsehbar sein
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 ### ACHTUNG
 jwt = JWT(app, authenticate, identity) #/auth
 
